@@ -2,7 +2,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
     before_action :set_subject, only: [:edit, :update, :destroy]
   
     def index
-      @subjects = Subject.all.page(params[:page]) #Pass each param to pages
+      @subjects = Subject.all.order(:description).page(params[:page]) #Pass each param to pages
     end
   
     def new
