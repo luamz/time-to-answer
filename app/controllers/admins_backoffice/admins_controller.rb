@@ -8,6 +8,11 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   def update
+    if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+      #Caso a modificação seja só no email
+      params[:admin].extract!(:password,:password_confirmation)
+    end
+    
     @admin = Admin.find(params[:id])
     params_admin = params.require(:admin).permit(:email, :password, :password_confirmation)
     
