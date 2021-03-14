@@ -1,1 +1,5 @@
-<h1>O Id da reposta é: <%= params[:answer] %></h1>
+<% if @answer.correct %>
+    <h1 style="color: green">Parabéns, você acertou! \o/</h1>
+<% else %>
+     <h1  style="color: red">Infelizmente, você errou! :(</h1>
+<% end %>
