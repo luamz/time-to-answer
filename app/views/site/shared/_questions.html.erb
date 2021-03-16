@@ -37,6 +37,12 @@
   <% end %>
 <% end %>
 
-<div class="text-center">
-  <%= paginate @questions %>
-</div>
+<% if user_signed_in? %>
+  <div class="text-center">
+    <%= paginate @questions %>
+  </div>
+<% else %>
+  <div class= "alert alert-info" role="alert">
+    Efetue login para continuar respondendo questões...
+  </div>
+<% end %>
