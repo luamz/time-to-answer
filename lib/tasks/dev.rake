@@ -82,6 +82,8 @@ namespace :dev do
     end
   end
 
+  
+
   private
 
   def create_question_params(subject = Subject.all.sample)

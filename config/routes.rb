@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :users_backoffice do
     get 'welcome/index'
     get 'profile', to: 'profile#edit'
+    get 'zip_code', to: 'zip_code#show'
     patch 'profile', to: 'profile#update'
   end
   namespace :admins_backoffice do
